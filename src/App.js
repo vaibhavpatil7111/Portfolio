@@ -7,16 +7,16 @@ import About from './components/About';
 import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode');
-    const isDark = savedMode ? JSON.parse(savedMode) : false;
+    const isDark = savedMode ? JSON.parse(savedMode) : true;
     setDarkMode(isDark);
     document.documentElement.classList.toggle('dark', isDark);
   }, []);
@@ -45,7 +45,7 @@ function App() {
           <TechStack />
           <Experience />
           <Projects />
-          <Skills />
+
           <Certifications />
           <Contact />
         </motion.div>

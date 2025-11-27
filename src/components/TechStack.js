@@ -5,8 +5,19 @@ import { FiCode, FiServer, FiCloud, FiSettings, FiShield, FiMonitor } from 'reac
 const TechStack = () => {
   const techCategories = [
     {
-      title: 'Backend Development',
+      title: 'Frontend Development',
       icon: <FiCode size={32} />,
+      gradient: 'from-blue-500 to-cyan-500',
+      technologies: [
+        { name: 'React.js', level: 90, color: '#61dafb', description: 'Modern JavaScript library for UI' },
+        { name: 'JavaScript', level: 88, color: '#f7df1e', description: 'Dynamic programming language' },
+        { name: 'HTML5/CSS3', level: 95, color: '#e34f26', description: 'Web markup and styling' },
+        { name: 'Tailwind CSS', level: 85, color: '#06b6d4', description: 'Utility-first CSS framework' }
+      ]
+    },
+    {
+      title: 'Backend Development',
+      icon: <FiServer size={32} />,
       gradient: 'from-purple-600 to-blue-600',
       technologies: [
         { name: 'PHP', level: 90, color: '#777bb4', description: 'Server-side scripting and web development' },
@@ -22,8 +33,8 @@ const TechStack = () => {
       technologies: [
         { name: 'AWS', level: 88, color: '#ff9900', description: 'EC2, S3, RDS, Lambda, CloudFormation' },
         { name: 'Docker', level: 85, color: '#2496ed', description: 'Containerization and orchestration' },
-        { name: 'Kubernetes', level: 78, color: '#326ce5', description: 'Container orchestration platform' },
-        { name: 'Terraform', level: 80, color: '#623ce4', description: 'Infrastructure as Code' }
+        { name: 'Terraform', level: 80, color: '#623ce4', description: 'Infrastructure as Code' },
+        { name: 'Linux', level: 85, color: '#fcc624', description: 'Operating system administration' }
       ]
     },
     {
@@ -46,6 +57,17 @@ const TechStack = () => {
         { name: 'Grafana', level: 85, color: '#f46800', description: 'Data visualization and dashboards' },
         { name: 'ELK Stack', level: 75, color: '#005571', description: 'Elasticsearch, Logstash, Kibana' },
         { name: 'CloudWatch', level: 78, color: '#ff9900', description: 'AWS monitoring and logging' }
+      ]
+    },
+    {
+      title: 'Database & Tools',
+      icon: <FiShield size={32} />,
+      gradient: 'from-indigo-500 to-purple-500',
+      technologies: [
+        { name: 'MongoDB', level: 75, color: '#47a248', description: 'NoSQL document database' },
+        { name: 'Git', level: 90, color: '#f05032', description: 'Version control system' },
+        { name: 'Postman', level: 85, color: '#ff6c37', description: 'API development and testing' },
+        { name: 'VS Code', level: 90, color: '#007acc', description: 'Code editor and IDE' }
       ]
     }
   ];
@@ -71,7 +93,7 @@ const TechStack = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {techCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
