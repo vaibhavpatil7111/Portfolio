@@ -35,6 +35,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Coding Background Pattern */}
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.4'%3E%3Ctext x='5' y='15' font-family='monospace' font-size='8'%3E%7B%7D%3C/text%3E%3Ctext x='25' y='35' font-family='monospace' font-size='6'%3E&lt;/&gt;%3C/text%3E%3Ctext x='40' y='50' font-family='monospace' font-size='7'%3E()%3C/text%3E%3Ctext x='10' y='45' font-family='monospace' font-size='5'%3E[]%3C/text%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+      
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         <div className="gradient-mesh opacity-20 absolute inset-0"></div>
