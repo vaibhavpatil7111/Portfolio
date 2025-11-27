@@ -141,7 +141,7 @@ const Contact = () => {
                   <h4 className="font-semibold text-gray-900 dark:text-white">Location</h4>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Vadodara, Gujarat, India
+                  Pune, Maharashtra, India
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
                   Open to remote work and relocation
