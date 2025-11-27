@@ -17,9 +17,11 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -35,12 +37,12 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gradient"
-          >
-            VB
-          </motion.div>
+          <div className="flex items-center gap-3">
+            <i className="fas fa-infinity text-2xl text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600"></i>
+            <span className="text-2xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600">
+              Vaibhav
+            </span>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

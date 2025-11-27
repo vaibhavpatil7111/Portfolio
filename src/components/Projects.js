@@ -1,47 +1,100 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiServer, FiDatabase, FiCloud } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiServer, FiDatabase, FiCloud, FiCode } from 'react-icons/fi';
 
 const Projects = () => {
   const projects = [
     {
       title: 'Smart Inventory Management System (SIMS)',
-      description: 'Developed a scalable inventory management system with automated CI/CD pipelines, AWS serverless architecture, and Dockerized microservices.',
-      technologies: ['ASP.NET Core', 'React.js', 'MySQL', 'AWS Lambda', 'Docker', 'Terraform', 'Jenkins'],
-      icon: <FiDatabase size={24} />,
-      gradient: 'from-blue-500 to-purple-600',
+      description: 'Enterprise-grade inventory management system built with ASP.NET Core and PHP backend, featuring automated CI/CD pipelines, AWS serverless architecture, and Dockerized microservices for scalable operations.',
+      technologies: ['ASP.NET Core', 'PHP', 'React.js', 'MySQL', 'AWS Lambda', 'Docker', 'Terraform', 'Jenkins'],
+      icon: <FiDatabase size={32} />,
+      gradient: 'from-blue-600 via-purple-600 to-indigo-600',
+      category: 'Full-Stack Development',
+      demoUrl: '#',
+      githubUrl: '#',
       features: [
-        'Real-time inventory tracking',
-        'Automated stock alerts',
-        'Serverless architecture',
-        'Microservices design'
-      ]
+        'Real-time inventory tracking with WebSocket integration',
+        'Automated stock alerts and notifications',
+        'Serverless architecture with AWS Lambda',
+        'Microservices design with Docker containers',
+        'Advanced reporting and analytics dashboard',
+        'Multi-tenant architecture support'
+      ],
+      metrics: {
+        performance: '99.9% uptime',
+        scale: '10K+ transactions/day',
+        efficiency: '60% faster processing'
+      }
     },
     {
-      title: 'End-to-End CI/CD Pipeline',
-      description: 'Built Jenkins-based CI/CD pipelines integrating GitHub, Docker, Kubernetes (EKS), and SonarQube to automate deployment workflows.',
-      technologies: ['Jenkins', 'Docker', 'Kubernetes', 'GitHub Actions', 'SonarQube', 'AWS EKS'],
-      icon: <FiServer size={24} />,
-      gradient: 'from-green-500 to-teal-600',
+      title: 'Enterprise CI/CD Pipeline Platform',
+      description: 'Comprehensive DevOps platform integrating Jenkins, GitHub Actions, Docker, Kubernetes (EKS), and SonarQube for automated testing, security scanning, and multi-environment deployments.',
+      technologies: ['Jenkins', 'Docker', 'Kubernetes', 'GitHub Actions', 'SonarQube', 'AWS EKS', 'Terraform'],
+      icon: <FiServer size={32} />,
+      gradient: 'from-green-500 via-emerald-500 to-teal-600',
+      category: 'DevOps & Automation',
+      demoUrl: '#',
+      githubUrl: '#',
       features: [
-        'Automated testing & deployment',
-        'Code quality gates',
-        'Container orchestration',
-        'Multi-environment support'
-      ]
+        'Automated testing with parallel execution',
+        'Code quality gates with SonarQube integration',
+        'Container orchestration with Kubernetes',
+        'Multi-environment deployment (Dev/Stage/Prod)',
+        'Security scanning and vulnerability assessment',
+        'Rollback mechanisms and blue-green deployments'
+      ],
+      metrics: {
+        deployment: '50+ deployments/week',
+        quality: '95% code coverage',
+        speed: '80% faster releases'
+      }
     },
     {
-      title: 'Cloud Infrastructure Automation',
-      description: 'Automated AWS infrastructure provisioning using Terraform and CloudFormation with monitoring and logging solutions.',
-      technologies: ['Terraform', 'CloudFormation', 'AWS', 'Prometheus', 'Grafana', 'ELK Stack'],
-      icon: <FiCloud size={24} />,
-      gradient: 'from-orange-500 to-red-600',
+      title: 'AWS Cloud Infrastructure Automation',
+      description: 'Fully automated cloud infrastructure provisioning using Terraform and CloudFormation, featuring comprehensive monitoring with Prometheus, Grafana, and ELK Stack for enterprise-scale applications.',
+      technologies: ['Terraform', 'CloudFormation', 'AWS', 'Prometheus', 'Grafana', 'ELK Stack', 'Docker'],
+      icon: <FiCloud size={32} />,
+      gradient: 'from-orange-500 via-red-500 to-pink-600',
+      category: 'Cloud Architecture',
+      demoUrl: '#',
+      githubUrl: '#',
       features: [
-        'Infrastructure as Code',
-        'Auto-scaling capabilities',
-        'Comprehensive monitoring',
-        'Cost optimization'
-      ]
+        'Infrastructure as Code with Terraform',
+        'Auto-scaling and load balancing',
+        'Comprehensive monitoring and alerting',
+        'Cost optimization and resource management',
+        'Disaster recovery and backup automation',
+        'Security compliance and governance'
+      ],
+      metrics: {
+        cost: '40% cost reduction',
+        availability: '99.99% SLA',
+        automation: '100% infrastructure automated'
+      }
+    },
+    {
+      title: 'PHP Microservices Architecture',
+      description: 'Modern PHP-based microservices platform with Docker containerization, API Gateway integration, and comprehensive monitoring for high-performance web applications.',
+      technologies: ['PHP', 'Laravel', 'Docker', 'Nginx', 'Redis', 'MySQL', 'Jenkins', 'SonarQube'],
+      icon: <FiCode size={32} />,
+      gradient: 'from-purple-600 via-blue-600 to-cyan-600',
+      category: 'Backend Development',
+      demoUrl: '#',
+      githubUrl: '#',
+      features: [
+        'RESTful API design with Laravel framework',
+        'Docker containerization for all services',
+        'Redis caching for improved performance',
+        'Automated testing and code quality checks',
+        'API Gateway for service orchestration',
+        'Comprehensive logging and monitoring'
+      ],
+      metrics: {
+        response: '<100ms API response',
+        throughput: '5K+ requests/second',
+        reliability: '99.9% service availability'
+      }
     }
   ];
 
@@ -64,7 +117,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -74,81 +127,134 @@ const Projects = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden card-hover h-full">
-                {/* Project Header */}
-                <div className={`h-32 bg-gradient-to-r ${project.gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute top-6 left-6 p-3 bg-white/20 backdrop-blur-sm rounded-lg">
+              <div className="glass rounded-3xl backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden card-hover h-full">
+                {/* Enhanced Project Header */}
+                <div className={`h-40 bg-gradient-to-r ${project.gradient} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/10"></div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 backdrop-blur-sm border border-white/30">
+                    <span className="text-white text-xs font-semibold">{project.category}</span>
+                  </div>
+                  
+                  {/* Icon */}
+                  <div className="absolute top-6 left-6 p-4 glass backdrop-blur-sm rounded-2xl border border-white/30 group-hover:scale-110 transition-transform duration-300">
                     <div className="text-white">
                       {project.icon}
                     </div>
                   </div>
-                  <div className="absolute inset-0 opacity-10">
-                    {[...Array(20)].map((_, i) => (
-                      <div
+                  
+                  {/* Animated Background Elements */}
+                  <div className="absolute inset-0 opacity-20">
+                    {[...Array(15)].map((_, i) => (
+                      <motion.div
                         key={i}
-                        className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                        className="absolute w-2 h-2 bg-white rounded-full"
+                        animate={{
+                          y: [0, -30, 0],
+                          opacity: [0.2, 0.8, 0.2],
+                          scale: [1, 1.5, 1]
+                        }}
+                        transition={{
+                          duration: 4 + i * 0.5,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
                         style={{
                           left: `${Math.random() * 100}%`,
                           top: `${Math.random() * 100}%`,
-                          animationDelay: `${Math.random() * 2}s`
                         }}
                       />
                     ))}
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-accent-500 rounded-full"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
+                  {/* Performance Metrics */}
                   <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">Performance Metrics</h4>
+                    <div className="grid grid-cols-3 gap-3">
+                      {Object.entries(project.metrics).map(([key, value], metricIndex) => (
+                        <div key={metricIndex} className="text-center p-3 glass rounded-xl backdrop-blur-sm border border-white/20">
+                          <div className="text-lg font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600">
+                            {value}
+                          </div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">
+                            {key}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="flex gap-3">
-                    <motion.button
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">Key Features</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {project.features.slice(0, 4).map((feature, featureIndex) => (
+                        <motion.div
+                          key={featureIndex}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"
+                        >
+                          <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Technologies */}
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wider">Tech Stack</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <motion.span
+                          key={techIndex}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: techIndex * 0.05 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          className="px-3 py-1 glass backdrop-blur-sm border border-white/20 text-gray-700 dark:text-gray-300 rounded-full text-xs font-semibold hover:shadow-glow transition-all duration-300"
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-4">
+                    <motion.a
+                      href={project.githubUrl}
+                      whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg"
+                    >
+                      <FiGithub size={18} />
+                      <span>View Code</span>
+                    </motion.a>
+                    <motion.a
+                      href={project.demoUrl}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-200"
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 glass backdrop-blur-sm border-2 border-white/30 hover:border-green-400/50 text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 rounded-xl font-semibold transition-all duration-300 hover:shadow-glow-green"
                     >
-                      <FiGithub size={16} />
-                      Code
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 px-4 py-2 border border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg text-sm font-medium hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 dark:hover:text-gray-900 transition-all duration-200"
-                    >
-                      <FiExternalLink size={16} />
-                      Demo
-                    </motion.button>
+                      <FiExternalLink size={18} />
+                      <span>Live Demo</span>
+                    </motion.a>
                   </div>
                 </div>
               </div>

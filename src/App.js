@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
+import ScrollProgress from './components/ScrollProgress';
 import Hero from './components/Hero';
 import About from './components/About';
+import TechStack from './components/TechStack';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -29,6 +31,7 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
       <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <ScrollProgress />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <motion.div
           initial={{ opacity: 0 }}
@@ -37,6 +40,7 @@ function App() {
         >
           <Hero />
           <About />
+          <TechStack />
           <Experience />
           <Projects />
           <Skills />
