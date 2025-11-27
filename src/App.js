@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode');
-    const isDark = savedMode ? JSON.parse(savedMode) : true;
+    const isDark = savedMode ? JSON.parse(savedMode) : false;
     setDarkMode(isDark);
     document.documentElement.classList.toggle('dark', isDark);
   }, []);
