@@ -45,22 +45,22 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                whileHover={{ scale: 1.1 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-accent-400 transition-colors duration-200"
+                className="relative px-3 py-2 text-gray-700 dark:text-gray-300 font-medium transition-all duration-300 group"
               >
-                {item.name}
+                <span className="relative z-10">{item.name}</span>
+
+                <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-600 group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out"></div>
               </motion.a>
             ))}
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
             >
               {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
             </motion.button>
@@ -69,18 +69,16 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
             >
               {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
             >
               {isMobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
             </motion.button>
